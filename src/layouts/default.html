@@ -1,0 +1,139 @@
+{{!-- This is the base layout for your project, and will be used on every page unless specified. --}}
+
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Talk</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+<link rel="manifest" href="./assets/favicon/site.webmanifest">
+<link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#603cba">
+<meta name="theme-color" content="#ffffff">
+    <link href="https://fonts.googleapis.com/css?family=Kalam|Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{root}}assets/css/app.css">
+  </head>
+<body>
+      <div class="off-canvas-wrapper">
+  
+        <div class="off-canvas position-top" id="offCanvasTop" data-off-canvas>
+            <ul class="menu menu-links mobile-links vertical align-center">
+                <li><a id="active" href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT ME</a></li>
+                <li><a href="services.html">SERVICES</a></li>
+                <li><a href="testimonials.html">TESTIMONIALS</a></li>
+              </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  <div class="grid-container full">
+    <div class="grid-y medium-grid-frame">
+        <div class="off-canvas-content" data-off-canvas-content>
+          
+      <div class="menu-bar cell shrink header medium-cell-block-container show-for-small-only">
+            <span class="dot"><button class="menu-icon float-left" type="button" data-toggle="offCanvasTop">></button></span>
+          <div class="grid-x padding-gutters">
+            <div class="cell"> 
+                <a href="index.html">
+                <img src="assets/img/logo-oval.png" class="float-center logo-shadow">
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <div class="cell medium-auto medium-cell-block-container">
+          <div class="grid-x grid-padding-x">
+            <div class="cell medium-3 large-3 hide-for-small-only medium-cell-block side-bar">
+              <br> 
+                  <a href="index.html">
+                  <img src="assets/img/logo-oval.png" class="float-center logo-shadow">
+                  </a>
+                <br>
+                <ul class="menu menu-links vertical align-center">
+                    <li><a id="active" href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT ME</a></li>
+                    <li><a href="services.html">SERVICES</a></li>
+                    <li><a href="testimonials.html">TESTIMONIALS</a></li>
+                  </ul>
+            </div>
+            <div id="main-content" class="cell medium-9 large-9 small-12 medium-cell-block-y">
+                {{> body}}
+                <section class="show-for-large etus-contact">
+                    <div class="grid-container">
+                        <div class="grid-x grid-margin-x contact-block">
+                            <div class="cell small-4 large-offset-2">
+                                <h3 class="title">Contact</h3>
+                                <a href="#whatsapp" onclick="window.open('https://api.whatsapp.com/send?phone=19165462287','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');">
+                                  <img src="assets/img/social/whatsapp.png" class="social-icon" alt="whatsapp">
+                                </a> 
+                               <a href="skype:live:.cid.18787c4bbff8908?chat">
+                                  <img src="assets/img/social/skype.png" class="social-icon" alt="Skype">
+                                </a>
+                         
+                                    <a href="mailto:hello@englishtalk.us" target="blank">
+                                        <img src="assets/img/social/email.png" class="social-icon" alt="Email">
+                                      </a>
+                            </div>
+                            <div class="cell small-4">
+                                <h3 class="title" >Social networks</h3>
+                                <a href="https://www.linkedin.com/company/englishtalk-us/?viewAsMember=true" target="_blank">
+                                  <img src="assets/img/social/linkedin.png" class="social-icon" alt="LinkedIn">
+                                </a>
+                                <a href="https://www.instagram.com/englishtalk.us" target="_blank">
+                                  <img src="assets/img/social/instagram.png" class="social-icon" alt="Instagram">
+                                </a>
+                            </div>
+                          </div>
+                      </div>
+                </section>
+                <section class="hide-for-large etus-contact">
+                    <div class="grid-container">
+                        <div class="grid-x grid-padding-x contact-block">
+                            <div class="cell small-12 medium-6">
+                                <h3 class="title">Contact</h3>
+                                <a href="https://api.whatsapp.com/send?phone=19165462287">
+                                  <img src="assets/img/social/whatsapp.png" class="social-icon" alt="whatsapp">
+                                </a> 
+                               <a href="skype:live:.cid.18787c4bbff8908?chat">
+                                  <img src="assets/img/social/skype.png" class="social-icon" alt="Skype">
+                                </a>
+                         
+                                    <a href="mailto:hello@englishtalk.us">
+                                        <img src="assets/img/social/email.png" class="social-icon" alt="Email">
+                                      </a>
+                                      <br>
+                            </div>
+                            <div class="cell small-12 medium-6">
+                                <h3 class="title" >Social networks</h3>
+                                <a href="intent://www.linkedin.com/company/englishtalk-us/#Intent;package=com.linkedin.android;scheme=https;end?viewAsMember=true">
+                                  <img src="assets/img/social/linkedin.png" class="social-icon" alt="LinkedIn">
+                                </a>
+                                <a href="instagram://user?username=englishtalk.us">
+                                  <img src="assets/img/social/instagram.png" class="social-icon" alt="Instagram">
+                                </a>
+                                <br>
+                            </div>
+                          </div>
+                      </div>
+                </section>
+            <section class="etus-footer">
+                <div class="grid-container">
+                    <div class="cell footer">
+                        <p>Copyright &copy; EnglishTalk US 2019. All rights reserved</p>
+                    </div>
+                  </div>
+            </section>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+<script src="{{root}}assets/js/app.js"></script>
+</body>
+</html>
