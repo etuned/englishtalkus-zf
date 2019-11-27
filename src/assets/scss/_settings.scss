@@ -68,7 +68,7 @@
 // ---------
 
 $global-font-size: 100%;
-$global-width: rem-calc(1200);
+$global-width: rem-calc(1600);
 $global-lineheight: 1.5;
 $foundation-palette: (
   primary: #1779ba,
@@ -344,7 +344,7 @@ $card-margin-bottom: $global-margin;
 // 15. Close Button
 // ----------------
 
-$closebutton-position: right top;
+$closebutton-position: left top;
 $closebutton-offset-horizontal: (
   small: 0.66rem,
   medium: 1rem,
@@ -479,12 +479,12 @@ $menu-margin: 0;
 $menu-nested-margin: $global-menu-nested-margin;
 $menu-items-padding: $global-menu-padding;
 $menu-simple-margin: 1rem;
-$menu-item-color-active: $white;
-$menu-item-background-active: get-color(primary);
+$menu-item-color-active: #c252ca;
+$menu-item-background-active: #c252ca;
 $menu-icon-spacing: 0.25rem;
 $menu-state-back-compat: true;
 $menu-centered-back-compat: true;
-$menu-icons-back-compat: true;
+$menu-icons-back-compat: false;
 
 // 24. Meter
 // ---------
@@ -870,8 +870,8 @@ $xy-grid: true;
 $grid-container: $global-width;
 $grid-columns: 12;
 $grid-margin-gutters: (
-  small: 20px,
-  medium: 30px
+  small: 10px,
+  medium: 20px
 );
 $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: $grid-padding-gutters;
@@ -887,6 +887,13 @@ $xy-block-grid-max: 8;
 
 .side-bar {
   background-color: #a9fcd2 !important;
+    min-width: 255px !important;
+  @media only screen and (max-width: 750px) {
+    min-width: 90px !important;
+  }
+  @media only screen and (max-width: 698px) {
+    display: none;
+  }
 }
 
 .menu-links{
@@ -894,7 +901,7 @@ $xy-block-grid-max: 8;
     a {
       color: black !important;
       &:hover {
-          color: rebeccapurple !important;
+          color: #c252ca !important;
           text-shadow: 3px 1px 4px rgb(202, 162, 243);
       }
    }
@@ -914,6 +921,15 @@ $xy-block-grid-max: 8;
 }
 
 .menu-bar {
+  z-index: 9999;
+  padding: 1rem;
+  background-color: #a9fcd2;
+  -webkit-box-shadow: 0 8px 6px -6px rebeccapurple;  
+  -moz-box-shadow:    0 8px 6px -6px rebeccapurple; 
+  box-shadow:         0 8px 6px -6px rebeccapurple; 
+}
+
+.menu-bar-fixed {
   position: fixed;
   z-index: 9999;
   padding: 1rem;
@@ -946,13 +962,8 @@ $xy-block-grid-max: 8;
   margin: .62rem .4rem;
 }
 #active {
-  color: rgb(62, 16, 187) !important;
+  color: #c252ca !important;
   text-shadow: 3px 1px 4px rgb(202, 162, 243);
-}
-
-.page-header-hr{
-  border-top: 2px solid black;
-  border-radius: 3px;
 }
 
 .page-title {
@@ -966,15 +977,32 @@ $xy-block-grid-max: 8;
 // 58. Colored Pages
 // ----
 
-.home {
+.home-fixed {
   background: $home;
   @media only screen and (max-width: 639px) {
     padding-top: 130px;
   }
 }
 
+.home {
+  background: $home;
+}
+
+.testimonials-fixed {
+  background: $tesimonials;
+  padding-top: 1rem;
+  @media only screen and (max-width: 639px) {
+    padding-top: 170px;
+  }
+}
+
 .testimonials {
   background: $tesimonials;
+  padding-top: 1rem;
+}
+
+.about-fixed {
+  background: $about;
   padding-top: 1rem;
   @media only screen and (max-width: 639px) {
     padding-top: 170px;
@@ -984,6 +1012,12 @@ $xy-block-grid-max: 8;
 .about {
   background: $about;
   padding-top: 1rem;
+  @include clearfix;
+}
+
+.services-fixed {
+  background: $services;
+  padding-top: 1rem;
   @media only screen and (max-width: 639px) {
     padding-top: 170px;
   }
@@ -991,6 +1025,11 @@ $xy-block-grid-max: 8;
 
 .services {
   background: $services;
+  padding-top: 1rem;
+}
+
+.error-page-fixed {
+  background: $home;
   padding-top: 1rem;
   @media only screen and (max-width: 639px) {
     padding-top: 170px;
@@ -1000,9 +1039,6 @@ $xy-block-grid-max: 8;
 .error-page {
   background: $home;
   padding-top: 1rem;
-  @media only screen and (max-width: 639px) {
-    padding-top: 170px;
-  }
 }
 
 .align-left-padding {
@@ -1086,4 +1122,17 @@ $xy-block-grid-max: 8;
 #main-content {
   padding-bottom: 0;
 
+}
+
+span.smiley::before {
+  content: "😊";
+  @include breakpoint(medium) {
+    display: none;
+  }
+}
+
+.show-small-mobile {
+  @media only screen and (min-width: 699px) {
+    display: none !important;
+  }
 }

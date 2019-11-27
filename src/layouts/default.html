@@ -8,17 +8,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>English Talk</title>
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
-<link rel="manifest" href="./assets/favicon/site.webmanifest">
-<link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#603cba">
-<meta name="theme-color" content="#ffffff">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#603cba">
+    <meta name="theme-color" content="#ffffff">
     <link href="https://fonts.googleapis.com/css?family=Kalam|Kaushan+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{root}}assets/css/app.css">
   </head>
 <body>
       <div class="off-canvas-wrapper">
+  
+        <div class="off-canvas position-top" id="offCanvasTop" data-off-canvas>
+            <button class="close-button" aria-label="Close menu" type="button" data-close>
+                <span aria-hidden="true">&times;</span>
+              </button>
+            <ul class="menu menu-links mobile-links vertical align-center">
+                <li><a id="active" href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT ME</a></li>
+                <li><a href="services.html">SERVICES</a></li>
+                <li><a href="testimonials.html">TESTIMONIALS</a></li>
+              </ul>
+        </div>
+        </div>
+     
+  <div class="grid-container full">
+    <div class="grid-y medium-grid-frame">
+        <div class="off-canvas-content" data-off-canvas-content>
+          
+      <div class="menu-bar cell shrink header medium-cell-block-container show-small-mobile">
+            <span class="dot"><button class="menu-icon float-left" type="button" data-toggle="offCanvasTop">></button></span>
+          <div class="grid-x padding-gutters">
+            <div class="cell"> 
+                <a href="index.html">
+                <img src="assets/img/logo-oval.png" class="float-center logo-shadow">
+                </a>
+                      <div class="off-canvas-wrapper">
   
         <div class="off-canvas position-top" id="offCanvasTop" data-off-canvas>
             <ul class="menu menu-links mobile-links vertical align-center">
@@ -29,27 +55,14 @@
               </ul>
         </div>
         </div>
-      </div>
-    </div>
-  <div class="grid-container full">
-    <div class="grid-y medium-grid-frame">
-        <div class="off-canvas-content" data-off-canvas-content>
-          
-      <div class="menu-bar cell shrink header medium-cell-block-container show-for-small-only">
-            <span class="dot"><button class="menu-icon float-left" type="button" data-toggle="offCanvasTop">></button></span>
-          <div class="grid-x padding-gutters">
-            <div class="cell"> 
-                <a href="index.html">
-                <img src="assets/img/logo-oval.png" class="float-center logo-shadow">
-                </a>
             </div>
           </div>
         </div>
       </div>
 
-        <div class="cell medium-auto medium-cell-block-container">
+        <div class="cell medium-cell-block-container">
           <div class="grid-x grid-padding-x">
-            <div class="cell medium-3 large-3 hide-for-small-only medium-cell-block side-bar">
+            <div class="cell shrink hide-for-small-only side-bar">
               <br> 
                   <a href="index.html">
                   <img src="assets/img/logo-oval.png" class="float-center logo-shadow">
@@ -62,7 +75,7 @@
                     <li><a href="testimonials.html">TESTIMONIALS</a></li>
                   </ul>
             </div>
-            <div id="main-content" class="cell medium-9 large-9 small-12 medium-cell-block-y">
+            <div id="main-content" class="cell medium-auto small-12 medium-cell-block-y">
                 {{> body}}
                 <section class="show-for-large etus-contact">
                     <div class="grid-container">
