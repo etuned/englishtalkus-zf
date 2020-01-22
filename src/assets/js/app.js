@@ -17,10 +17,20 @@ require('foundation-sites');
 $(document).foundation();
 var prev = 0;
 var $window = $(window);
-var nav = $('.menu-bar');
+var nav = $('.menu-bar-fixed');
 
 $window.on('scroll', function(){
   var scrollTop = $window.scrollTop();
   nav.toggleClass('hidden', scrollTop > prev);
   prev = scrollTop;
+});
+
+$(document).ready(function() {
+  $("body").on("mousedown", "*", function(e) {
+      if (($(this).is(":focus") || $(this).is(e.target)) && $(this).css("outline-style") == "none") {
+          $(this).css("outline", "none").on("blur", function() {
+              $(this).off("blur").css("outline", "");
+          });
+      }
+  });
 });

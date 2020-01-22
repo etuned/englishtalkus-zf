@@ -61,17 +61,17 @@
 //  56. Xy Grid
 //  57. English Talk Menu UI
 //  58. Colored Pages
-
+@import url('https://fonts.googleapis.com/css?family=Kalam|Kaushan+Script&display=swap');
 @import 'util/util';
 
 // 1. Global
 // ---------
 
-$global-font-size: 100%;
+$global-font-size: 1.3rem;
 $global-width: rem-calc(1600);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #1779ba,
+  primary: #106ba8,
   secondary: #767676,
   success: #3adb76,
   warning: #ffae00,
@@ -80,7 +80,7 @@ $foundation-palette: (
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
-$black: #0a0a0a;
+$black: #000;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
@@ -112,7 +112,7 @@ $print-hrefs: true;
 
 $breakpoints: (
   small: 0,
-  medium: 640px,
+  medium: 740px,
   large: 1024px,
   xlarge: 1200px,
   xxlarge: 1440px,
@@ -174,7 +174,7 @@ $code-background: $light-gray;
 $code-border: 1px solid $medium-gray;
 $code-padding: rem-calc(2 5 1);
 $anchor-color: $primary-color;
-$anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
+$anchor-color-hover:  #c252ca;
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
@@ -500,15 +500,15 @@ $meter-fill-bad: $alert-color;
 // --------------
 
 $offcanvas-sizes: (
-  small: 275px,
+  medium: 255px,
 );
 $offcanvas-vertical-sizes: (
-  small: 100vh,
+  small: 210px  ,
 );
 $offcanvas-background: #a9fcd2;
-$offcanvas-shadow: 0 0 7px rgba($black, 0.3);
+$offcanvas-shadow: 0 0 0 rgba($black, 0);
 $offcanvas-inner-shadow-size: 20px;
-$offcanvas-inner-shadow-color: rgba($black, 0.14);
+$offcanvas-inner-shadow-color: rgba($black, 0.0);
 $offcanvas-overlay-zindex: 11;
 $offcanvas-push-zindex: 12;
 $offcanvas-overlap-zindex: 13;
@@ -516,7 +516,7 @@ $offcanvas-reveal-zindex: 12;
 $offcanvas-transition-length: 0.3s;
 $offcanvas-transition-timing: ease;
 $offcanvas-fixed-reveal: true;
-$offcanvas-exit-background: rgba($white, 0.25);
+$offcanvas-exit-background: rgba($white, 0.0);
 $maincontent-class: 'off-canvas-content';
 
 // 26. Orbit
@@ -881,30 +881,17 @@ $xy-block-grid-max: 8;
 // 57. English Talk Menu UI
 // ----
 
-#offCanvasTop {
-  padding-top: 40vh; 
-}
-
-.side-bar {
-  background-color: #a9fcd2 !important;
-    min-width: 255px !important;
-  @media only screen and (max-width: 750px) {
-    min-width: 90px !important;
-  }
-  @media only screen and (max-width: 698px) {
-    display: none;
-  }
-}
-
-.menu-links{
-  font-family: 'Kaushan Script', cursive;
+.menu-links {
+    font-family: 'Kaushan Script', cursive;
+    color: black !important;
+    font-size: large;
     a {
-      color: black !important;
+      color: black;
+      outline-style: hidden !important;   
       &:hover {
-          color: #c252ca !important;
           text-shadow: 3px 1px 4px rgb(202, 162, 243);
       }
-   }
+    }
   }
 
 
@@ -920,14 +907,28 @@ $xy-block-grid-max: 8;
   }
 }
 
+.logo{
+  width: 10.4rem;
+  filter: drop-shadow(0 0 0.1rem grey);
+}
+
 .menu-bar {
   z-index: 9999;
   padding: 1rem;
   background-color: #a9fcd2;
-  -webkit-box-shadow: 0 8px 6px -6px rebeccapurple;  
-  -moz-box-shadow:    0 8px 6px -6px rebeccapurple; 
-  box-shadow:         0 8px 6px -6px rebeccapurple; 
 }
+
+.menu-shadow {
+  display: block;
+  z-index: 9999;
+  margin-bottom: 3px;
+  color: #a9fcd2 !important;
+  background-color: #a9fcd2 !important;
+  -webkit-box-shadow: 0 8px 6px -6px rebeccapurple !important;  
+  -moz-box-shadow:    0 8px 6px -6px rebeccapurple !important; 
+  box-shadow:         0 8px 6px -6px rebeccapurple !important;
+}
+
 
 .menu-bar-fixed {
   position: fixed;
@@ -938,12 +939,34 @@ $xy-block-grid-max: 8;
   top: 0;
   left: 0;
   transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1);
-  -webkit-box-shadow: 0 8px 6px -6px rebeccapurple;  
-  -moz-box-shadow:    0 8px 6px -6px rebeccapurple; 
-  box-shadow:         0 8px 6px -6px rebeccapurple; 
   
   &.hidden {
     transform: translateY(-100%);
+  }
+  &.about {
+    @include breakpoint(small) {
+      padding-top: 170px;
+    }
+  }
+  &.home {
+    @include breakpoint(small) {
+      padding-top: 130px;
+    }
+  }
+  .testimonials {
+    @include breakpoint(small) {
+      padding-top: 170px;
+    }
+  }
+  .services {  
+    @include breakpoint(small) {
+      padding-top: 170px;
+    }
+  }
+  .error-page {
+    @include breakpoint(small) {
+      padding-top: 170px;
+    }
   }
 }
 
@@ -958,9 +981,13 @@ $xy-block-grid-max: 8;
 }
 
 .menu-icon {
-  padding: .71rem;
-  margin: .62rem .4rem;
+  padding: .1rem;
+  margin: .49rem .4rem;
+    button {
+      outline-style: hidden !important; 
+    }
 }
+
 #active {
   color: #c252ca !important;
   text-shadow: 3px 1px 4px rgb(202, 162, 243);
@@ -970,30 +997,11 @@ $xy-block-grid-max: 8;
   font-size: 2rem;
 }
 
-.text-center {
-  text-align: center;
-}
-
 // 58. Colored Pages
 // ----
 
-.home-fixed {
-  background: $home;
-  @media only screen and (max-width: 639px) {
-    padding-top: 130px;
-  }
-}
-
 .home {
   background: $home;
-}
-
-.testimonials-fixed {
-  background: $tesimonials;
-  padding-top: 1rem;
-  @media only screen and (max-width: 639px) {
-    padding-top: 170px;
-  }
 }
 
 .testimonials {
@@ -1001,39 +1009,14 @@ $xy-block-grid-max: 8;
   padding-top: 1rem;
 }
 
-.about-fixed {
-  background: $about;
-  padding-top: 1rem;
-  @media only screen and (max-width: 639px) {
-    padding-top: 170px;
-  }
-}
-
 .about {
   background: $about;
   padding-top: 1rem;
-  @include clearfix;
-}
-
-.services-fixed {
-  background: $services;
-  padding-top: 1rem;
-  @media only screen and (max-width: 639px) {
-    padding-top: 170px;
-  }
 }
 
 .services {
   background: $services;
   padding-top: 1rem;
-}
-
-.error-page-fixed {
-  background: $home;
-  padding-top: 1rem;
-  @media only screen and (max-width: 639px) {
-    padding-top: 170px;
-  }
 }
 
 .error-page {
@@ -1049,37 +1032,31 @@ $xy-block-grid-max: 8;
 .youtube-block {
   @include breakpoint(large) {
       width: 75%;
+      max-width: 600px;
   }
 }
 
 .etus-contact {
-  width: 100%;
-  height: auto;
   background-color: #eee;
   padding: .5rem;
-}
+} 
 
 .etus-footer {
-  width: 100%;
-  height: 51px;
+  height: 7vh;
+  padding-top: 2vh;
   text-align: center;
   background-color: black;
   color: white;
   p {
-    float: center;
-    padding-top: .6rem;
-      @media only screen and (max-width: 400px) {
-        font-size: small;
+      @include breakpoint(small) {
+        font-size: .7rem;
       }
   }
 }
 
-.fixed-size {
-  max-width: 1600px;
-}
-
 .social-icon {
   display: inline-block;
+  text-align: center;
   margin: 0 .4rem;
   max-width: 45px;
   max-height: 45px;
@@ -1110,18 +1087,11 @@ $xy-block-grid-max: 8;
 .title {
   font-family: 'Kaushan Script', cursive;
   font-size: 1.4rem;
-  padding: .2rem;
 }
 .contact-block {
-  padding: .3rem;
-  @media only screen and (max-width: 639px) {
+  @include breakpoint(small) {
       text-align: center;   
   }
-}
-
-#main-content {
-  padding-bottom: 0;
-
 }
 
 span.smiley::before {
@@ -1131,8 +1101,32 @@ span.smiley::before {
   }
 }
 
-.show-small-mobile {
-  @media only screen and (min-width: 699px) {
-    display: none !important;
+.quote {
+  padding: 0 .5rem;
+  @include breakpoint(small) {
+    text-align: justify;
+    padding: 0 .35rem;
+  }
+}
+
+.author {
+  text-align: right;
+  padding: 0 .5rem;
+  @include breakpoint(medium){
+    padding: 0 5rem;
+  }
+}
+
+.lead-text {
+  font-weight: 600;
+  padding: 0 .5rem;
+  text-align: center;
+}
+
+.no-js {
+  @include breakpoint(small only) {
+    #offCanvasLeft {
+      display: none;
+    }
   }
 }
