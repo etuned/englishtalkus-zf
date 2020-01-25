@@ -82,7 +82,7 @@ $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #000;
 $white: #fefefe;
-$body-background: $white;
+$body-background: $black;
 $body-font-color: $black;
 $body-font-family: 'Kalam', cursive;
 $body-antialiased: true;
@@ -100,10 +100,13 @@ $global-prototype-breakpoints: false;
 $global-button-cursor: auto;
 $global-color-pick-contrast-tolerance: 0;
 $print-transparent-backgrounds: true;
-$home: yellow;
+$home: rgb(218, 218, 76);
 $about: #8ed0d7;
-$services: #d8abff;
+$services: #dab3fd; //#d8abff
 $tesimonials: #f6aec6;
+$menu-hover: #a9fcd2;
+$menu-ui-bg: rgb(83, 31, 134);
+
 @include add-foundation-colors;
 $print-hrefs: true;
 
@@ -174,7 +177,7 @@ $code-background: $light-gray;
 $code-border: 1px solid $medium-gray;
 $code-padding: rem-calc(2 5 1);
 $anchor-color: $primary-color;
-$anchor-color-hover:  #c252ca;
+$anchor-color-hover:  $menu-hover;
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
@@ -479,8 +482,8 @@ $menu-margin: 0;
 $menu-nested-margin: $global-menu-nested-margin;
 $menu-items-padding: $global-menu-padding;
 $menu-simple-margin: 1rem;
-$menu-item-color-active: #c252ca;
-$menu-item-background-active: #c252ca;
+$menu-item-color-active: $menu-hover;
+$menu-item-background-active: $menu-hover;
 $menu-icon-spacing: 0.25rem;
 $menu-state-back-compat: true;
 $menu-centered-back-compat: true;
@@ -505,7 +508,7 @@ $offcanvas-sizes: (
 $offcanvas-vertical-sizes: (
   small: 210px  ,
 );
-$offcanvas-background: #a9fcd2;
+$offcanvas-background: $menu-ui-bg;
 $offcanvas-shadow: 0 0 0 rgba($black, 0);
 $offcanvas-inner-shadow-size: 20px;
 $offcanvas-inner-shadow-color: rgba($black, 0.0);
@@ -830,11 +833,11 @@ $thumbnail-radius: $global-radius;
 // 53. Title Bar
 // -------------
 
-$titlebar-background: #a9fcd2;
+$titlebar-background: $menu-ui-bg;
 $titlebar-color: rgb(35, 177, 165);
 $titlebar-padding: 1rem;
 $titlebar-text-font-weight: bold;
-$titlebar-icon-color: #3bf7b5;
+$titlebar-icon-color: $menu-ui-bg;
 $titlebar-icon-color-hover: $medium-gray;
 $titlebar-icon-spacing: 0.25rem;
 
@@ -883,13 +886,12 @@ $xy-block-grid-max: 8;
 
 .menu-links {
     font-family: 'Kaushan Script', cursive;
-    color: black !important;
     font-size: large;
     a {
-      color: black;
+      color: $white;
       outline-style: hidden !important;   
       &:hover {
-          text-shadow: 3px 1px 4px rgb(202, 162, 243);
+          text-shadow: 3px 1px 4px rgb(93, 212, 129);
       }
     }
   }
@@ -909,24 +911,24 @@ $xy-block-grid-max: 8;
 
 .logo{
   width: 10.4rem;
-  filter: drop-shadow(0 0 0.1rem grey);
+  filter: drop-shadow(0 0 0.1rem rgb(212, 212, 212));
 }
 
 .menu-bar {
   z-index: 9999;
   padding: 1rem;
-  background-color: #a9fcd2;
+  background-color: $menu-ui-bg;
 }
 
 .menu-shadow {
   display: block;
   z-index: 9999;
   margin-bottom: 3px;
-  color: #a9fcd2 !important;
-  background-color: #a9fcd2 !important;
-  -webkit-box-shadow: 0 8px 6px -6px rebeccapurple !important;  
-  -moz-box-shadow:    0 8px 6px -6px rebeccapurple !important; 
-  box-shadow:         0 8px 6px -6px rebeccapurple !important;
+  color: $menu-ui-bg !important;
+  background-color: $menu-ui-bg !important;
+  -webkit-box-shadow: 0 8px 6px -6px rgba(27, 219, 139, 0.65) !important;  
+  -moz-box-shadow:    0 8px 6px -6px rgba(27, 219, 139, 0.65) !important; 
+  box-shadow:         0 8px 6px -6px rgba(27, 219, 139, 0.65) !important;
 }
 
 
@@ -934,7 +936,7 @@ $xy-block-grid-max: 8;
   position: fixed;
   z-index: 9999;
   padding: 1rem;
-  background-color: #a9fcd2;
+  background-color: $menu-ui-bg;
   right: 0;
   top: 0;
   left: 0;
@@ -980,17 +982,18 @@ $xy-block-grid-max: 8;
   display: inline-flex;
 }
 
-.menu-icon {
-  padding: .1rem;
-  margin: .49rem .4rem;
+.m-icon {
+  padding: .5rem;
+  margin: .49rem .35rem;
+  @include hamburger($menu-hover, rgb(202, 158, 247), 32px, 17px, 2px, 3);
     button {
       outline-style: hidden !important; 
     }
 }
 
 #active {
-  color: #c252ca !important;
-  text-shadow: 3px 1px 4px rgb(202, 162, 243);
+  color: $menu-hover !important;
+  text-shadow: 3px 1px 4px rgb(57, 223, 140);
 }
 
 .page-title {
@@ -1037,7 +1040,8 @@ $xy-block-grid-max: 8;
 }
 
 .etus-contact {
-  background-color: #eee;
+  background-color: $black;
+  color: $white;
   padding: .5rem;
 } 
 
@@ -1045,8 +1049,8 @@ $xy-block-grid-max: 8;
   height: 7vh;
   padding-top: 2vh;
   text-align: center;
-  background-color: black;
-  color: white;
+  background-color: $white;
+  color: $black;
   p {
       @include breakpoint(small) {
         font-size: .7rem;
@@ -1068,14 +1072,14 @@ $xy-block-grid-max: 8;
       min-width: 39px;
       min-height: 39px;  
     }
-  -webkit-filter: drop-shadow(1px 3px 10px rgba(0,0,0,.25));
-  -moz-filter: drop-shadow(1px 3px 10px rgba(0,0,0,.25));
-  -o-filter: drop-shadow(1px 3px 10px rgba(0,0,0,.25));
-  -ms-filter: drop-shadow(1px 3px 10px rgba(0,0,0,.25));
-  filter: drop-shadow(1px 3px 10px rgba(0,0,0,.25));
+  -webkit-filter: drop-shadow(1px 3px 10px rgba(108, 224, 176, 0.25));
+  -moz-filter: drop-shadow(1px 3px 10px rgba(108, 224, 176, 0.25));
+  -o-filter: drop-shadow(1px 3px 10px rgba(108, 224, 176, 0.25));
+  -ms-filter: drop-shadow(1px 3px 10px rgba(108, 224, 176, 0.25));
+  filter: drop-shadow(1px 3px 10px rgba(108, 224, 176, 0.25));
 
   &:hover {
-      filter: drop-shadow(1px 4px 10px rgba(172, 73, 27, 0.45));
+      filter: drop-shadow(1px 4px 10px rgba(75, 216, 117, 0.534));
       transform: scale(.97); 
   }
      &:active {

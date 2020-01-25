@@ -1,0 +1,33 @@
+$mobile-app-icon-bar-bg: $menu-ui-bg;
+$mobile-app-icon-bar-icon-size: 2rem;
+
+.mobile-app-icon-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: $mobile-app-icon-bar-bg;
+
+  button {
+    margin-top: .4rem;
+    padding: .5em;
+    cursor: pointer;
+    color: white;
+    &:hover {
+      filter: drop-shadow(1px 4px 10px rgba(75, 216, 117, 0.534));
+      transform: scale(.97); 
+  }
+     &:active {
+      transform: translate(2px,2px);
+      transform: scale(.90); 
+  }
+    svg,
+    i,
+    img,
+    a {
+      color: $white;
+      font-size: $mobile-app-icon-bar-icon-size;
+      max-height: $mobile-app-icon-bar-icon-size;
+      max-width: $mobile-app-icon-bar-icon-size;
+    }
+  }
+}
